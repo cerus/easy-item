@@ -41,6 +41,30 @@ https://jitpack.io/#cerus/easy-item
 </project>
 ```
 
+## Available transformers
+
+**Amount**\
+`with amount INTEGER`\
+`with amount 32`
+
+**Enchantment**\
+`with enchantment STRING INTEGER`\
+`with enchantment "minecraft:sharpness" 2`
+
+**Flag**\
+`with flag STRING`\
+`with flag "HIDE_ENCHANTS"`
+
+**Leather-color**\
+`with color/leathercolor STRING`\
+`with color/leathercolor "#00AFFE"`\
+`with color/leathercolor "255,255,255"`
+
+**Skullowner**\
+`with skullowner/owner STRING`\
+`with skullowner/owner "Cerus_"`\
+`with skullowner/owner "06f8c3cc-a3c5-4b48-bc6d-d3ee8963f2af"`
+
 ## Usage
 
 Parsing an item:
