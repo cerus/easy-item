@@ -1,12 +1,14 @@
-package dev.cerus.easyitem.parser;
+package dev.cerus.easyitem.parser.transformer;
 
-import dev.cerus.easyitem.Token;
 import dev.cerus.easyitem.exception.ParserException;
-import org.bukkit.inventory.ItemFlag;
+import dev.cerus.easyitem.parser.Parser;
+import dev.cerus.easyitem.parser.Transformer;
+import dev.cerus.easyitem.tokenizer.Token;
+import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class FlagTransformer implements Transformer {
+public class NameTransformer implements Transformer {
 
     @Override
     public void transform(final ItemStack itemStack, final Parser parser) throws ParserException {
@@ -18,15 +20,8 @@ public class FlagTransformer implements Transformer {
             throw new ParserException("Not a string");
         }
 
-        final ItemFlag flag;
-        try {
-            flag = ItemFlag.valueOf(token.getValueUnsafe().toString().toUpperCase());
-        } catch (final IllegalArgumentException e) {
-            throw new ParserException("Flag not found", e);
-        }
-
         final ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.addItemFlags(flag);
+        itemMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', token.getValueUnsafe()));
         itemStack.setItemMeta(itemMeta);
     }
 
@@ -35,7 +30,7 @@ public class FlagTransformer implements Transformer {
         return parser.has(0)
                 && parser.peek().equals(Token.Type.WORD, "with")
                 && parser.has(1)
-                && parser.peekNext().equals(Token.Type.WORD, "flag");
+                && parser.peekNext().equals(Token.Type.WORD, "name");
     }
 
 }

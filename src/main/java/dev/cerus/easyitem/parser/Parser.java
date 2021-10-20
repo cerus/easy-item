@@ -1,7 +1,7 @@
 package dev.cerus.easyitem.parser;
 
-import dev.cerus.easyitem.Token;
 import dev.cerus.easyitem.exception.ParserException;
+import dev.cerus.easyitem.tokenizer.Token;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;

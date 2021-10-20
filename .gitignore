@@ -4,5 +4,5 @@ target/
 dependency-reduced-pom.xml
 
 src/main/java/dev/cerus/easyitem/Test.java
-src/main/java/dev/cerus/easyitem/parser/SkullTextureTransformer.java
+src/main/java/dev/cerus/easyitem/parser/transformer/SkullTextureTransformer.java
 src/main/resources/plugin.yml

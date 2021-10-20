@@ -1,7 +1,9 @@
-package dev.cerus.easyitem.parser;
+package dev.cerus.easyitem.parser.transformer;
 
-import dev.cerus.easyitem.Token;
 import dev.cerus.easyitem.exception.ParserException;
+import dev.cerus.easyitem.parser.Parser;
+import dev.cerus.easyitem.parser.Transformer;
+import dev.cerus.easyitem.tokenizer.Token;
 import org.bukkit.inventory.ItemStack;
 
 public class AmountTransformer implements Transformer {

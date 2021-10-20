@@ -46,14 +46,21 @@ https://jitpack.io/#cerus/easy-item
 Parsing an item:
 
 ```java
-import dev.cerus.easyitem.Token;
-import dev.cerus.easyitem.Tokenizer;
+import dev.cerus.easyitem.EasyItem;
+import dev.cerus.easyitem.tokenizer.Token;
+import dev.cerus.easyitem.tokenizer.Tokenizer;
 import dev.cerus.easyitem.exception.ParserException;
 import dev.cerus.easyitem.parser.Parser;
 import dev.cerus.easyitem.parser.ParserBuilder;
 import java.util.List;
 
 class MyClass {
+
+    public ItemStack makeStackQuick(String str) {
+        // You could also use EasyItem#parse(String) but that 
+        // would require you to catch a ParserException
+        return EasyItem.unsafeParse(str);
+    }
 
     public ItemStack makeStack(String str) {
         try {
@@ -63,6 +70,8 @@ class MyClass {
                     .defaultTransformers()
                     .transformers(/*Add additional transformers here*/)
                     .build();
+            // EasyItem#newDefaultParser(List<Token<?>>) also 
+            // returns this exact parser
             return parser.parse();
         } catch (ParserException ex) {
             ex.printStackTrace();
@@ -77,7 +86,7 @@ class MyClass {
 Creating your own transformer:
 
 ```java
-import dev.cerus.easyitem.Token;
+import dev.cerus.easyitem.tokenizer.Token;
 import dev.cerus.easyitem.exception.ParserException;
 import dev.cerus.easyitem.parser.Parser;
 import dev.cerus.easyitem.parser.Transformer;

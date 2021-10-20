@@ -1,4 +1,4 @@
-package dev.cerus.easyitem;
+package dev.cerus.easyitem.tokenizer;
 
 public class Token<T> {
 

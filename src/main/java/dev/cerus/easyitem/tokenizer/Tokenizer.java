@@ -1,4 +1,4 @@
-package dev.cerus.easyitem;
+package dev.cerus.easyitem.tokenizer;
 
 import dev.cerus.easyitem.exception.ParserException;
 import java.util.ArrayList;
