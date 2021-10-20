@@ -19,9 +19,31 @@ pants: |-
 
 ## Installation
 
-Use Jitpack.io
+https://jitpack.io/#cerus/easy-item
+
+```xml
+
+<project>
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.cerus</groupId>
+            <artifactId>easy-item</artifactId>
+            <version>Tag</version>
+        </dependency>
+    </dependencies>
+</project>
+```
 
 ## Usage
+
+Parsing an item:
 
 ```java
 import dev.cerus.easyitem.Token;
@@ -51,6 +73,8 @@ class MyClass {
 
 }
 ```
+
+Creating your own transformer:
 
 ```java
 import dev.cerus.easyitem.Token;
