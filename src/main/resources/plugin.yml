@@ -1,0 +1,9 @@
+name: "Easyitem"
+version: 1
+author: Cerus
+main: dev.cerus.easyitem.Test
+api-version: 1.16
+
+commands:
+  testeasyitem:
+    description: "A"
