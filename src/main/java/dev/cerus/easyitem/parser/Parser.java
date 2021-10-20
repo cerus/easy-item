@@ -39,7 +39,6 @@ public class Parser {
             final int now = this.index;
             for (final Transformer transformer : this.transformers) {
                 if (transformer.matches(this)) {
-                    System.out.println("transforming with " + transformer.getClass().getSimpleName());
                     transformer.transform(stack, this);
                 }
             }
