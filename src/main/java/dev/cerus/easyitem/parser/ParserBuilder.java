@@ -7,7 +7,6 @@ import dev.cerus.easyitem.parser.transformer.LeatherColorTransformer;
 import dev.cerus.easyitem.parser.transformer.LoreTransformer;
 import dev.cerus.easyitem.parser.transformer.NameTransformer;
 import dev.cerus.easyitem.parser.transformer.SkullOwnerTransformer;
-import dev.cerus.easyitem.parser.transformer.SkullTextureTransformer;
 import dev.cerus.easyitem.tokenizer.Token;
 import java.util.List;
 
@@ -27,8 +26,7 @@ public class ParserBuilder {
                 new LeatherColorTransformer(),
                 new LoreTransformer(),
                 new NameTransformer(),
-                new SkullOwnerTransformer(),
-                new SkullTextureTransformer()
+                new SkullOwnerTransformer()
         );
     }
 
